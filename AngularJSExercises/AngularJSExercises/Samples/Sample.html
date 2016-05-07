@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Simple HTML - AngularJS Exercises</title>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.2.3.js"></script>
+    <script src="../Scripts/controllers.js"></script>
+</head>
+<body ng-app="myApp" >
+<div class="container">
+    <!--Other Samples-->
+    <div ng-app>
+        <p>
+            Name : <input type="text" ng-model="name">
+        </p>
+        <h1>Hello, {{name}}</h1>
+    </div>
+    <div class="col-lg-3" ng-app>
+        <p>
+            Name: <input class="form-control" type="text" ng-model="name1">
+        </p>
+        <p ng-bind="name1"></p><br/>
+    </div>
+    <div ng-app ng-init="firstName='Roland'">
+        <br /><p>The name is <span ng-bind="firstName"></span></p><br/>
+    </div>
+    <!--Book Samples-->
+    <div class="col-sm-3">
+        <input class="form-control" type="text" ng-model="greeting" />
+        
+        <span ng-bind="greeting">{{greeting}}</span><span>, World!</span><br />
+    </div> <!--Again not Working-->
+    <div class="dl-horizontal"></div>
+    <div>
+        <h1>Your Order</h1>
+        <div ng-repeat='item in items'>
+            <span>{{item.title}}</span>
+            <input ng-model='item.quantity'>
+            <span>{{item.price | currency}}</span>
+            <span>{{item.price * item.quantity | currency}}</span>
+            <button ng-click="remove($index)">Remove</button>
+        </div>
+    </div>
+    <script src="../Scripts/angular.js"></script>
+    <script>
+        function CartController($scope) {
+            $scope.items = [
+              { title: 'Paint pots', quantity: 8, price: 3.95 },
+              { title: 'Polka dots', quantity: 17, price: 12.95 },
+              { title: 'Pebbles', quantity: 5, price: 6.95 }
+            ];
+            $scope.remove = function (index) {
+                $scope.items.splice(index, 1);
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
