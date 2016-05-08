@@ -201,6 +201,7 @@
     <Content Include="Content\Template\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="PortfolioSiteMaster.Master" />
     <Content Include="ServicesPage.aspx" />
+    <Content Include="TestCodes\TestCodes.aspx" />
     <Content Include="Theme\index.html" />
     <Content Include="WelcomePage.aspx" />
     <Content Include="Samples\Tutorials\Pluralsight\PluralsightMaster.master" />
@@ -1006,6 +1007,13 @@
     </Compile>
     <Compile Include="ServicesPage.aspx.designer.cs">
       <DependentUpon>ServicesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestCodes\TestCodes.aspx.cs">
+      <DependentUpon>TestCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestCodes\TestCodes.aspx.designer.cs">
+      <DependentUpon>TestCodes.aspx</DependentUpon>
     </Compile>
     <Compile Include="WelcomePage.aspx.cs">
       <DependentUpon>WelcomePage.aspx</DependentUpon>

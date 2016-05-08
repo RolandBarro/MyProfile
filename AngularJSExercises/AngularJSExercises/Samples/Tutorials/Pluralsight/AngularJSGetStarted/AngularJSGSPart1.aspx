@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div ng-app="">
+            <div ng-app="app">
                 <h4>Output</h4>
                 {{ 30/6 }}
                 <div ng-controller="ControllerMain">
@@ -27,6 +27,12 @@
                     <div>
                         <div>First Name: {{person.firstname}}</div>
                     </div>
+                </div>
+                <div ng-controller="ControllerHello">
+                    <div class="col-sm-3">
+                        <input class="form-control" ng-model="greeting.model"/>
+                    </div>
+                    <div class="col-sm-3">Greeting: {{greeting.text}} </div>
                 </div>
             </div>
 

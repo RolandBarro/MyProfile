@@ -1,5 +1,9 @@
 ﻿// Code goes here
 
+//Controller Registration
+app = angular.module('app', []);
+
+
 var ControllerMain = function ($scope) {
     var person = {
         firstname: "Roland",
@@ -9,11 +13,18 @@ var ControllerMain = function ($scope) {
     $scope.message = "Welcome to AngularJS!";
     $scope.person = person;
 };
+app.controller('ControllerMain', ControllerMain);
+
+var ControllerHello = function($scope) {
+    $scope.greeting = { text: 'Hello!' };
+};
+app.controller('ControllerHello', ControllerHello);
 
 /*
 var work = function () {
     console.log("Study Hard!");
 };
+
 
 var dowork = function (f) {
     console.log("Start of work...");

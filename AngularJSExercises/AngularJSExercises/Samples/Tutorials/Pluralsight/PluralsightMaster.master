@@ -1,8 +1,6 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/PortfolioSiteMaster.Master" AutoEventWireup="true" CodeBehind="PluralsightMaster.master.cs" Inherits="AngularJSExercises.Samples.Tutorials.Pluralsight.PluralsightMaster" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="Scripts/custom.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section>

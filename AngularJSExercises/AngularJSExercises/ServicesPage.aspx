@@ -32,7 +32,7 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-gears fa-stack-1x fa-inverse"></i>
+                        <a href="/TestCodes/TestCodes.aspx"><i class="fa fa-gears fa-stack-1x fa-inverse"></i></a>
                     </span>
                     <h4 class="service-heading">Test Codes</h4>
                     <p class="text-muted">Things that I have tried out curiousity and for fun. Some of it are not running most it doesn't even look nice yet it's good to see.</p>
