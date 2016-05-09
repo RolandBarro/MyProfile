@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Samples/Tutorials/Pluralsight/PluralsightMaster.master" AutoEventWireup="true" CodeBehind="AngularJSGSPart1.aspx.cs" Inherits="AngularJSExercises.Samples.Tutorials.Pluralsight.AngularJSGetStarted.AngularJSGSPart1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 class="page-header section-heading">AngularJS: Get Started</h1>
-    <h3 class="section-subheading text-muted">by: Scott Allen</h3>
     <div>
+        <h3 class="section-heading">AngularJS: Get Started</h3>
+        <h3 class="section-subheading text-muted">by: Scott Allen</h3>
         <div class="exeroutput">
             <div class="panel panel-info">
                 <div class="panel-heading">Vocabularies</div>
@@ -20,22 +20,63 @@
                 </div>
             </div>
             <div ng-app="app">
-                <h4>Output</h4>
-                {{ 30/6 }}
-                <div ng-controller="ControllerMain">
-                    <h1>{{message}}</h1>
-                    <div>
-                        <div>First Name: {{person.firstname}}</div>
+                <div class="col-sm-6">
+                    <div ng-controller="ControllerMain">
+                        <h1>{{message}}</h1>
+                    </div>
+                    <div ng-controller="ControllerHello">
+                        <div class="col-sm-3">
+                            <input class="form-control" ng-model="greeting.text" />
+                        </div>
+                        <div class="col-sm-3">Greeting: {{greeting.text}} </div>
                     </div>
                 </div>
-                <div ng-controller="ControllerHello">
-                    <div class="col-sm-3">
-                        <input class="form-control" ng-model="greeting.model"/>
+                <div class="col-sm-6" ng-controller="ControllerCart">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <span>Your Order</span><span><i>( Sample from a book)</i></span>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-condensed table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="30%">Item Name</th>
+                                        <th width="25%">Qty</th>
+                                        <th width="20%">Unit Price</th>
+                                        <th width="20%">SubTotal</th>
+                                        <th width="5%">
+                                            <button class="btn btn-info btn-group-xs"><i class="fa fa-plus"></i></button>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in items">
+                                        <td>{{item.title}}</td>
+                                        <td>
+                                            <input class="form-control number" ng-model="item.quantity"></td>
+                                        <td>{{item.price | currency }}</td>
+                                        <td>{{item.price * item.quantity | currency }}</td>
+                                        <td>
+                                            <button class="btn btn-danger" ng-click="remove($index)"><i class="fa fa-times"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="col-sm-push-6">
+                                <span>Total:</span>
+                                <span><strong>P x,xxx.xx</strong></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-3">Greeting: {{greeting.text}} </div>
                 </div>
             </div>
-
+        </div>
+        <div class="btn-group-xs col-sm-3 col-sm-offset-9">
+            <a class="btn btn-primary btn-sm" href="#"><i class="fa fa-arrow-left"></i></a>
+            <a class="btn btn-primary btn-sm" href="#"><i class="fa fa-home"></i></a>
+            <a class="btn btn-primary btn-sm" href="/Samples/Tutorials/Pluralsight/AngularJSGetStarted/AngularJSGSP2.aspx"><i class="fa fa-arrow-right"></i></a>
         </div>
     </div>
 </asp:Content>

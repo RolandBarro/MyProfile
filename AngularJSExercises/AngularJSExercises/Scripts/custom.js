@@ -1,24 +1,58 @@
 ﻿// Code goes here
 
 //Controller Registration
-app = angular.module('app', []);
+(function () {
+    app = angular.module('app', []);
 
+    var ControllerMain = function ($scope) {
+        var person = {
+            firstname: "Roland",
+            lastname: "Barro"
+        };
 
-var ControllerMain = function ($scope) {
-    var person = {
-        firstname: "Roland",
-        lastname: "Barro"
+        $scope.message = "Welcome to AngularJS!";
+        $scope.person = person;
     };
+    app.controller('ControllerMain', ControllerMain);
 
-    $scope.message = "Welcome to AngularJS!";
-    $scope.person = person;
-};
-app.controller('ControllerMain', ControllerMain);
+    var ControllerHello = function ($scope) {
+        $scope.greeting = { text: 'Hello!' };
+    };
+    app.controller('ControllerHello', ControllerHello);
 
-var ControllerHello = function($scope) {
-    $scope.greeting = { text: 'Hello!' };
-};
-app.controller('ControllerHello', ControllerHello);
+    var ControllerCart = function ($scope) {
+        $scope.items = [
+          { title: 'Paint pots', quantity: 8, price: 3.95 },
+          { title: 'Polka dots', quantity: 17, price: 12.95 },
+          { title: 'Pebbles', quantity: 5, price: 6.95 }
+        ];
+
+        $scope.remove = function (index) {
+            $scope.items.splice(index, 1);
+        };
+    };
+    app.controller('ControllerCart', ControllerCart);
+
+    var ControllerGitHubUserFetch = function ($scope, $http) {
+
+        var onUserFetchUserComplete = function (response) {
+            $scope.user = response.data;
+        };
+
+        var onError = function (reason) {
+            $scope.error = "Could not fetch the User...";
+        };
+
+        $http.get("https://api.github.com/users/JammerCoder")
+            .then(onUserFetchUserComplete, onError);
+    };
+    app.controller('ControllerGitHubUserFetch', ["$scope","$http", ControllerGitHubUserFetch]);
+}());
+
+
+
+
+
 
 /*
 var work = function () {

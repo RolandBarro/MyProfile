@@ -108,6 +108,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Samples\Tutorials\Pluralsight\AngularJSGetStarted\AngularJSGSP2.aspx" />
     <Content Include="Samples\Tutorials\Pluralsight\AngularJSGetStarted\AngularJSGSPart1.aspx" />
     <Content Include="Samples\Tutorials\Pluralsight\PluralsightExercises.aspx" />
     <Content Include="Scripts\agency.js" />
@@ -980,6 +981,13 @@
       <DependentUpon>PortfolioSiteMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\Tutorials\Pluralsight\AngularJSGetStarted\AngularJSGSP2.aspx.cs">
+      <DependentUpon>AngularJSGSP2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Samples\Tutorials\Pluralsight\AngularJSGetStarted\AngularJSGSP2.aspx.designer.cs">
+      <DependentUpon>AngularJSGSP2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Samples\Tutorials\Pluralsight\AngularJSGetStarted\AngularJSGSPart1.aspx.cs">
       <DependentUpon>AngularJSGSPart1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
