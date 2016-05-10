@@ -4,7 +4,7 @@
 (function () {
     app = angular.module('app', []);
 
-    var ControllerMain = function ($scope) {
+    var controllerMain = function ($scope) {
         var person = {
             firstname: "Roland",
             lastname: "Barro"
@@ -13,14 +13,14 @@
         $scope.message = "Welcome to AngularJS!";
         $scope.person = person;
     };
-    app.controller('ControllerMain', ControllerMain);
+    app.controller('ControllerMain', controllerMain);
 
-    var ControllerHello = function ($scope) {
+    var controllerHello = function ($scope) {
         $scope.greeting = { text: 'Hello!' };
     };
-    app.controller('ControllerHello', ControllerHello);
+    app.controller('ControllerHello', controllerHello);
 
-    var ControllerCart = function ($scope) {
+    var controllerCart = function ($scope) {
         $scope.items = [
           { title: 'Paint pots', quantity: 8, price: 3.95 },
           { title: 'Polka dots', quantity: 17, price: 12.95 },
@@ -31,22 +31,32 @@
             $scope.items.splice(index, 1);
         };
     };
-    app.controller('ControllerCart', ControllerCart);
+    app.controller('ControllerCart', controllerCart);
 
-    var ControllerGitHubUserFetch = function ($scope, $http) {
+    var controllerGitHubUserFetch = function ($scope, $http) {
 
-        var onUserFetchUserComplete = function (response) {
-            $scope.user = response.data;
+        var onRepos = function(response) {
+            $scope.repos = response.data;
         };
 
         var onError = function (reason) {
-            $scope.error = "Could not fetch the User...";
+            $scope.error = "Could not fetch the User Information.";
         };
 
-        $http.get("https://api.github.com/users/JammerCoder")
+        var onUserFetchUserComplete = function (response) {
+            $scope.user = response.data;
+            $http.get($scope.user.repos_url)
+                .then(onRepos, onError);
+        };
+        
+        $scope.searchUser = function (username) {
+            $http.get("https://api.github.com/users/" + username)
             .then(onUserFetchUserComplete, onError);
+        };
+        $scope.username = "JammerCoder";
+        $scope.sortRepo = "-stargazers_count";
     };
-    app.controller('ControllerGitHubUserFetch', ["$scope","$http", ControllerGitHubUserFetch]);
+    app.controller('ControllerGitHubUserFetch', controllerGitHubUserFetch);
 }());
 
 

@@ -28,7 +28,7 @@ th {
 .form-control {
     padding: 4px 4px;
     font-size: 14px;
-    height: 25px;
+    height: 28px;
 }
 
 .number {
@@ -57,4 +57,7 @@ section h3.section-subheading {
 section {
     padding: 100px 0;
     padding-bottom: 20px;
+}
+img {
+    border-radius: 6px;
 }
