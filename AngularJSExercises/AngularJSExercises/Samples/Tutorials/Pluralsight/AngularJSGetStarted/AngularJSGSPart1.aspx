@@ -37,7 +37,7 @@
                             <span>Your Order</span><span><i>( Sample from a book)</i></span>
                         </div>
                         <div class="panel-body">
-                            <table class="table table-striped table-condensed table-hover">
+                            <table class="table table-bordered table-striped table-condensed table-hover">
                                 <thead>
                                     <tr>
                                         <th width="30%">Item Name</th>
@@ -54,8 +54,8 @@
                                         <td>{{item.title}}</td>
                                         <td>
                                             <input class="form-control number" ng-model="item.quantity"></td>
-                                        <td>{{item.price | currency }}</td>
-                                        <td>{{item.price * item.quantity | currency }}</td>
+                                        <td class="number">{{item.price | currency:"PhP " }}</td>
+                                        <td class="number">{{item.price * item.quantity | currency:"PhP "}}</td>
                                         <td>
                                             <button class="btn btn-danger" ng-click="remove($index)"><i class="fa fa-times"></i></button>
                                         </td>

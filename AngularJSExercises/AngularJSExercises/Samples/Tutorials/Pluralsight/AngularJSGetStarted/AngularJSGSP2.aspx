@@ -7,20 +7,56 @@
     <div class="container-fluid" ng-app="app">
         <div ng-controller="ControllerGitHubUserFetch">
             <div>
-                <div>
-                    <h3>GitHub User Fetch</h3>
+                <h3 class="page-header col-sm-9">GitHub User Fetch</h3>
+                <div class="col-sm-3">
+                    <form name="searchUser">
+                        <div class="input-group">
+                            <input class="form-control input-group" placeholder="Search User" required ng-model="username" />
+                            <!--<input type="submit" value="Search" />-->
+                            <a class="input-group-addon btn btn-sm btn-success" type="submit" ng-click="searchUser(username)"><i class="fa fa-search"></i></a>
+                        </div>
+                        {{error}}
+                    </form>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <asp:Image ID="imgAvatar" runat="server" ng-src="{{user.avatar_url}}" title="img: {{user.name}}" Height="100px" Width="100px" /><br />
-                <strong>{{user.name}}</strong><br />
-                {{user.location}}
-                {{error}}
-            </div>
-            <div class="col-sm-9">
-                <p>Other OutPut...</p>
+            <!--Results View-->
+            <div class="col-sm-12" ng-show="user">
+                <div class="col-sm-3 container-fluid">
+                    <asp:Image ID="imgAvatar" runat="server" ng-src="{{user.avatar_url}}" title="img: {{user.name}}" Height="100px" Width="100px" /><br/>
+                    <strong>{{user.name}}</strong><br />
+                    {{user.location}} <br/><br/>
+                    Order By: <br/> 
+                    <select class="form-control" ng-model="sortRepo">
+                        <option value="+name">Name</option>
+                        <option value="-stargazers_count">Stars</option>
+                        <option value="+language">Language</option>
+                    </select>
+                </div>
+                <div class="col-sm-9" ng-hide="!user">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Repositories</div>
+                        <div class="panel-body">
+                            <table class="table table-condensed table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Stars</th>
+                                        <th>Language</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="repo in repos | filter:searchTerm | orderBy:'name' | orderBy:sortRepo">
+                                        <td>{{repo.name}}</td>
+                                        <td class="number">{{repo.stargazers_count | number}}</td>
+                                        <td>{{repo.language}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer">Total Repositories: {{repos.length}}</div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </asp:Content>
