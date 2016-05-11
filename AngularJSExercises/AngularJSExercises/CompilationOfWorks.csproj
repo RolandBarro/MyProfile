@@ -90,6 +90,7 @@
     <Content Include="Content\Template\img\team\1.jpg" />
     <Content Include="Content\Template\img\team\2.jpg" />
     <Content Include="Content\Template\img\team\3.jpg" />
+    <Content Include="Exercises\ProjectManager\ProjectManagerTaskList.aspx" />
     <Content Include="Samples\Sample.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -206,6 +207,7 @@
     <Content Include="Theme\index.html" />
     <Content Include="WelcomePage.aspx" />
     <Content Include="Samples\Tutorials\Pluralsight\PluralsightMaster.master" />
+    <Content Include="Exercises\ProjectManager\ProjectManagerMaster.master" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\i18n\agency.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
@@ -973,6 +975,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exercises\ProjectManager\ProjectManagerMaster.master.cs">
+      <DependentUpon>ProjectManagerMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exercises\ProjectManager\ProjectManagerMaster.master.designer.cs">
+      <DependentUpon>ProjectManagerMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ProjectManager\ProjectManagerTaskList.aspx.cs">
+      <DependentUpon>ProjectManagerTaskList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exercises\ProjectManager\ProjectManagerTaskList.aspx.designer.cs">
+      <DependentUpon>ProjectManagerTaskList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PortfolioSiteMaster.Master.cs">
       <DependentUpon>PortfolioSiteMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1032,7 +1048,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exercises\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>

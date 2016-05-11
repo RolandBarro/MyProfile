@@ -59,7 +59,15 @@
                         <a href="https://github.com/JammerCoder"><i class="fa fa-github fa-stack-1x fa-inverse"></i></a>
                     </span>
                     <h4 class="service-heading">Actual Works</h4>
-                    <p class="text-muted">My give me a Case Study to perform. This is my actual test on how much I have learned about AngularJS. Check this out...</p>
+                    <p class="text-muted">My Actual works are stored as repositories in GitHub. Please feel free to skim through my GitHub Page...</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <a href="/Exercises/ProjectManager/ProjectManagerTaskList.aspx"><i class="fa fa-flask fa-stack-1x fa-inverse"></i></a>
+                    </span>
+                    <h4 class="service-heading">Project Management</h4>
+                    <p class="text-muted">My Mentor gave me a Case Study to perform. This is my actual test on how much I have learned about AngularJS. Check this out...</p>
                 </div>
             </div>
         </div>
