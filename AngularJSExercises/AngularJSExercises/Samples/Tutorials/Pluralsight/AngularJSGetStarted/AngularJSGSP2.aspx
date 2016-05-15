@@ -47,7 +47,7 @@
                             <ul>
                                 <li>User Search</li>
                                 <li>GitHub Repo Download</li>
-                                <li>Others...</li>
+                                <li>But this has to changed into a more scalable web designin the next page....</li>
                             </ul>
                         </div>
                     </div>

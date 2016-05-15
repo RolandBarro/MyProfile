@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>d556c415</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -90,7 +91,12 @@
     <Content Include="Content\Template\img\team\1.jpg" />
     <Content Include="Content\Template\img\team\2.jpg" />
     <Content Include="Content\Template\img\team\3.jpg" />
+    <Content Include="css\jasmine.css" />
+    <Content Include="Exercises\AngularJSNinja\AngularJSNinjaP1.aspx" />
     <Content Include="Exercises\ProjectManager\ProjectManagerTaskList.aspx" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Scripts\Specifics\Gruntfile.js" />
+    <Content Include="Scripts\Specifics\karma.conf.js" />
     <Content Include="Samples\Sample.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -142,7 +148,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="packages.config" />
+    <Content Include="Scripts\Specifics\packages.config" />
     <Content Include="Scripts\cbpAnimatedHeader.js" />
     <Content Include="Scripts\cbpAnimatedHeader.min.js" />
     <Content Include="Scripts\classie.js" />
@@ -202,12 +208,19 @@
     <Content Include="Content\Template\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\Template\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="PortfolioSiteMaster.Master" />
+    <Content Include="Scripts\jasmine-html.js" />
+    <Content Include="Scripts\jasmine.js" />
+    <Content Include="Scripts\Specifics\AngularJSNinja\apps.js" />
+    <Content Include="Scripts\Specifics\AngularJSNinja\controllers.js" />
     <Content Include="ServicesPage.aspx" />
-    <Content Include="TestCodes\TestCodes.aspx" />
+    <Content Include="Scripts\Specifics\TestScripts\DefaultTest.js" />
     <Content Include="Theme\index.html" />
     <Content Include="WelcomePage.aspx" />
     <Content Include="Samples\Tutorials\Pluralsight\PluralsightMaster.master" />
     <Content Include="Exercises\ProjectManager\ProjectManagerMaster.master" />
+    <Content Include="Exercises\AngularJSNinja\AngularNinjaMaster.master" />
+    <None Include=".bin\node.cmd" />
+    <Content Include="Scripts\Specifics\package.json" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\i18n\agency.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
@@ -975,6 +988,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exercises\AngularJSNinja\AngularJSNinjaP1.aspx.cs">
+      <DependentUpon>AngularJSNinjaP1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exercises\AngularJSNinja\AngularJSNinjaP1.aspx.designer.cs">
+      <DependentUpon>AngularJSNinjaP1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\AngularJSNinja\AngularNinjaMaster.master.cs">
+      <DependentUpon>AngularNinjaMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exercises\AngularJSNinja\AngularNinjaMaster.master.designer.cs">
+      <DependentUpon>AngularNinjaMaster.master</DependentUpon>
+    </Compile>
     <Compile Include="Exercises\ProjectManager\ProjectManagerMaster.master.cs">
       <DependentUpon>ProjectManagerMaster.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1032,13 +1059,6 @@
     <Compile Include="ServicesPage.aspx.designer.cs">
       <DependentUpon>ServicesPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TestCodes\TestCodes.aspx.cs">
-      <DependentUpon>TestCodes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestCodes\TestCodes.aspx.designer.cs">
-      <DependentUpon>TestCodes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WelcomePage.aspx.cs">
       <DependentUpon>WelcomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1047,9 +1067,7 @@
       <DependentUpon>WelcomePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -1075,6 +1093,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\KarmaGruntJSUnit.MSBuild.1.0.7\build\KarmaGruntJSUnit.MSBuild.Targets" Condition="Exists('..\packages\KarmaGruntJSUnit.MSBuild.1.0.7\build\KarmaGruntJSUnit.MSBuild.Targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\KarmaGruntJSUnit.MSBuild.1.0.7\build\KarmaGruntJSUnit.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\KarmaGruntJSUnit.MSBuild.1.0.7\build\KarmaGruntJSUnit.MSBuild.Targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

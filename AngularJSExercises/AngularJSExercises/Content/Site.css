@@ -68,6 +68,7 @@ img {
     border-radius: 6px;
 }
 
-.linehorizontal {
-    color: #ffffff;
+.label-sm {
+    font-weight: bold;
+    font-size: 12px;
 }

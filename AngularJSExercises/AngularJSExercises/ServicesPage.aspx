@@ -69,6 +69,14 @@
                     <h4 class="service-heading">Project Management</h4>
                     <p class="text-muted">My Mentor gave me a Case Study to perform. This is my actual test on how much I have learned about AngularJS. Check this out...</p>
                 </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <a href="/Exercises/AngularJSNinja/AngularJSNinjaP1.aspx"><i class="fa fa-gitlab fa-stack-1x fa-inverse"></i></a>
+                    </span>
+                    <h4 class="service-heading">AngularJS Ninja</h4>
+                    <p class="text-muted">A book inspires me to work for new exercises, and so I decided to place it on a separate page path for me track my progress. Come and see it.</p>
+                </div>
             </div>
         </div>
     </section>

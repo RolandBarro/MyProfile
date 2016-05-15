@@ -34,7 +34,6 @@
     app.controller('ControllerCart', controllerCart);
 
     var controllerGitHubUserFetch = function ($scope, $http, $interval, $log) {
-
         var onRepos = function(response) {
             $scope.repos = response.data;
         };

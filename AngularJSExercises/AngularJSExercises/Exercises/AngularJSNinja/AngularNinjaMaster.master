@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PortfolioSiteMaster.Master" AutoEventWireup="true" CodeBehind="AngularNinjaMaster.master.cs" Inherits="AngularJSExercises.Exercises.AngularJSNinja.AngularNinjaMaster" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../../Scripts/Specifics/AngularJSNinja/apps.js"></script>
+    <script src="../../Scripts/Specifics/AngularJSNinja/controllers.js"></script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <section>
+        <h1 class="page-header section-heading">AngularJS: Novice to Ninja</h1>
+        <div class="container">
+            <h3 class="section-subheading text-muted">by: Sandeep Panda</h3>
+            <span><i>(Page 1)</i></span>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </section>
+</asp:Content>
