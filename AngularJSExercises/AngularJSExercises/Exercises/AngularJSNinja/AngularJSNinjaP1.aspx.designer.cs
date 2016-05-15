@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AngularJSExercises.TestCodes
+namespace AngularJSExercises.Exercises.AngularJSNinja
 {
 
 
-    public partial class TestCodes
+    public partial class AngularJSNinjaP1
     {
     }
 }

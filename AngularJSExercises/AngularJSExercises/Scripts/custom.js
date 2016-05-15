@@ -33,8 +33,7 @@
     };
     app.controller('ControllerCart', controllerCart);
 
-    var controllerGitHubUserFetch = function ($scope, $http) {
-
+    var controllerGitHubUserFetch = function ($scope, $http, $interval, $log) {
         var onRepos = function(response) {
             $scope.repos = response.data;
         };
@@ -48,20 +47,40 @@
             $http.get($scope.user.repos_url)
                 .then(onRepos, onError);
         };
-        
-        $scope.searchUser = function (username) {
-            $http.get("https://api.github.com/users/" + username)
-            .then(onUserFetchUserComplete, onError);
+
+        var countDown = function() {
+            $scope.timeleft -= 1;
+            $scope.autosearch = "Automatically search in " + $scope.timeleft + "...";
+            if ($scope.timeleft < 1) {
+                $scope.searchUser($scope.username);
+            }
         };
+
+        var countDownInterval = null;
+
+        var startCountDown = function() {
+            countDownInterval = $interval(countDown, 1000, $scope.timeleft);
+        };
+
+        $scope.searchUser = function (username) {
+            //$log.info("Searching for " + username);
+            $http.get("https://api.github.com/users/" + username)
+                .then(onUserFetchUserComplete, onError);
+            if (countDownInterval) {
+                $interval.cancel(countDownInterval);
+                $scope.autosearch = null;
+            }
+        };
+
         $scope.username = "JammerCoder";
         $scope.sortRepo = "-stargazers_count";
+        $scope.timeleft = 5;
+        $scope.autosearch = "Automatically search in " + $scope.timeleft + "..."; 
+        startCountDown();
+
     };
     app.controller('ControllerGitHubUserFetch', controllerGitHubUserFetch);
 }());
-
-
-
-
 
 
 /*

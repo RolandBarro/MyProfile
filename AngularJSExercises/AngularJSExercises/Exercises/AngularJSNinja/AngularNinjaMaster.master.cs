@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AngularJSExercises.TestCodes
+namespace AngularJSExercises.Exercises.AngularJSNinja
 {
-    public partial class TestCodes : System.Web.UI.Page
+    public partial class AngularNinjaMaster : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

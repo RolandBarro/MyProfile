@@ -19,8 +19,13 @@
 }
 th > .btn, td > .btn {
     padding: 2px 6px;
-    font-size: 10px;
+    font-size: 12px;
 }
+
+.btn-link {
+    font-family: sans-serif;
+}
+
 th {
     text-align: center;
 }
@@ -29,13 +34,14 @@ th {
     padding: 4px 4px;
     font-size: 14px;
     height: 28px;
+    color: #000000;
 }
 
 .number {
     text-align: right;
 }
 
-.vocabularies {
+.vocabularies, .panel-body {
     color: #000000;
 }
 
@@ -60,4 +66,9 @@ section {
 }
 img {
     border-radius: 6px;
+}
+
+.label-sm {
+    font-weight: bold;
+    font-size: 12px;
 }
