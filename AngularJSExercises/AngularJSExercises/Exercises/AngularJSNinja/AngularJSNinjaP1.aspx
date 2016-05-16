@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div ng-app="myApp">
         <div class="container-fluid">
-            <div class="col-sm-4" ng-controller="FinanceController">
+            <div class="col-sm-4" ng-controller="ControllerFinance">
                 <div class="panel panel-default">
                     <div class="panel-heading">Exercise 1 - How much would spend for gadgets?</div>
                     <div class="panel-body">
@@ -24,6 +24,9 @@
                     </div>
                     <div class="panel-footer">Amount to spend: <strong>{{result() | currency:'PhP ' }}</strong></div>
                 </div>
+            </div>
+            <div class="col-sm-4" ng-controller="ControllerGreeting">
+                {{now}}{{greeting}}
             </div>
         </div>
     </div>
