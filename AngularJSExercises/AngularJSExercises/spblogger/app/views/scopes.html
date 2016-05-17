@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title ng-bind="title"></title>
+    <link href="../../../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../../../Content/font-awesome.css" rel="stylesheet" />
+    <link href="../../../Content/Site.css" rel="stylesheet" />
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/controllers.js"></script>
+</head>
+<body>
+    <div ng-app="myBookApp">
+        <div ng-controller="SiteController">
+            <span>{{publisher}} excels in {{type}} books</span>
+            <div ng-controller="BookController">
+                <h3>Some Popular Books from {{publisher}}</h3>
+                <ul>
+                    <li ng-repeat="book in books">
+                        <span>{{book}} </span><span><a class="btn btn-xs btn-info" href="#" ng-click="addToWishList(book)">Add to Wish List</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
