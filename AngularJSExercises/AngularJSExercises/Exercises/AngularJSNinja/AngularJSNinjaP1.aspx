@@ -26,7 +26,11 @@
                 </div>
             </div>
             <div class="col-sm-4" ng-controller="ControllerGreeting">
-                {{now}}{{greeting}}
+                <strong>{{greeting}}, it's {{now | date:'medium'}} right now.</strong>
+                <a class="btn btn-info btn-xs" ng-click="getRandomHello()">Random Message</a>
+            </div>
+            <div class="col-sm-4">
+                <a class="btn btn-xs btn-primary" href="/spblogger/app/views/scopes.html" target="blank">Scopes Sample</a>
             </div>
         </div>
     </div>

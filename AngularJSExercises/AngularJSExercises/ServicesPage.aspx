@@ -43,7 +43,7 @@
                         <i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">My Tasks</h4>
-                    <p class="text-muted">As we grow, job opportunities are sometimes up for grab but only when you can pass their coding test. It's all right here.</p>
+                    <p class="text-muted">As we grow, job opportunities are sometimes up for grab but only when you can pass their coding test.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -76,6 +76,14 @@
                     </span>
                     <h4 class="service-heading">AngularJS Ninja</h4>
                     <p class="text-muted">A book inspires me to work for new exercises, and so I decided to place it on a separate page path for me track my progress. Come and see it.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <a href="/Exercises/ProjectManager/ProjectManagerTaskList.aspx"><i class="fa fa-bullhorn fa-stack-1x fa-inverse"></i></a>
+                    </span>
+                    <h4 class="service-heading">Single Page Blogger</h4>
+                    <p class="text-muted">The Book AngularJS: Novice to Ninja is the source of the main concept of this project. However with some tweak and mods it has become my works...</p>
                 </div>
             </div>
         </div>

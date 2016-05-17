@@ -1,1 +1,1 @@
-﻿var myApp = angular.module('myApp', []);
+﻿myApp = angular.module('myApp', []);

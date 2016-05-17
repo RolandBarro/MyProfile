@@ -214,6 +214,9 @@
     <Content Include="Scripts\Specifics\AngularJSNinja\controllers.js" />
     <Content Include="ServicesPage.aspx" />
     <Content Include="Scripts\Specifics\TestScripts\DefaultTest.js" />
+    <Content Include="spblogger\app\js\app.js" />
+    <Content Include="spblogger\app\js\controllers.js" />
+    <Content Include="spblogger\app\views\scopes.html" />
     <Content Include="Theme\index.html" />
     <Content Include="WelcomePage.aspx" />
     <Content Include="Samples\Tutorials\Pluralsight\PluralsightMaster.master" />
@@ -1067,7 +1070,18 @@
       <DependentUpon>WelcomePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="spblogger\app\css\" />
+    <Folder Include="spblogger\app\img\" />
+    <Folder Include="spblogger\app\lib\" />
+    <Folder Include="spblogger\app\modules\posts\css\" />
+    <Folder Include="spblogger\app\modules\posts\img\" />
+    <Folder Include="spblogger\app\modules\posts\js\" />
+    <Folder Include="spblogger\app\modules\posts\views\" />
+    <Folder Include="spblogger\config\" />
+    <Folder Include="spblogger\logs\" />
+    <Folder Include="spblogger\scripts\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
